@@ -1,95 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/header.js"></script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script src="/js/header.js"></script>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <nav class="NavbarItems">
-            <h1 class="navbar-logo">React<i class="fab fa-react"></i></h1>
-            <div class="menu-icon">
-                <i id="toggle-btn" onclick="toggleMobileMenu()"></i>
-            </div>
-            
-            <ul id="menu"></ul>
-        </nav>
-    </header>
+      <nav class="NavbarItems">
+        <h1 class="navbar-logo">React<i class="fab fa-react"></i></h1>
+        <div class="menu-icon">
+          <i class="fas fa-bars" onclick="toggleMobileMenu(this)"></i>
+        </div>
 
+        <ul id="menu" class="nav-menu"></ul>
+      </nav>
+    </header>
 
     <!-- About -->
     <section></section>
 
-
     <!-- Cv -->
     <section>
-        <div>
-            <div class="typewriter">
-                <h1>Lebenslauf</h1>
-            </div>
-            <div id="timeline-content">
-                
-            </div>
+      <div>
+        <div class="typewriter">
+          <h1>Lebenslauf</h1>
         </div>
+        <div id="timeline-content"></div>
+      </div>
     </section>
-
 
     <!-- Skills -->
     <section></section>
 
-
     <!-- Portfolio -->
     <section></section>
 
-
     <!-- Contact -->
     <section>
-        <div class="container">
-            <div class="row">
-                    <h1>contact us</h1>
-            </div>
-            <div class="row">
-                    <h4>We'd love to hear from you!</h4>
-            </div>
-            <div class="row input-container">
-                    <div class="col-xs-12">
-                        <div class="styled-input wide">
-                            <input type="text" required />
-                            <label>Name</label> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="styled-input">
-                            <input type="text" required />
-                            <label>Email</label> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="styled-input">
-                            <input type="text" required />
-                            <label>Phone Number</label> 
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="styled-input wide">
-                            <textarea required></textarea>
-                            <label>Message</label>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="btn-lrg submit-btn">Send Message</div>
-                    </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <h1>contact us</h1>
         </div>
+        <div class="row">
+          <h4>We'd love to hear from you!</h4>
+        </div>
+        <div class="row input-container">
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" required />
+              <label>Name</label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input">
+              <input type="text" required />
+              <label>Email</label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input">
+              <input type="text" required />
+              <label>Phone Number</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea required></textarea>
+              <label>Message</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="btn-lrg submit-btn">Send Message</div>
+          </div>
+        </div>
+      </div>
     </section>
-
 
     <!-- Footer -->
     <footer></footer>
-</body>
+  </body>
 </html>

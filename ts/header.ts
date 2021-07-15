@@ -33,7 +33,13 @@ window.onload = () => {
 
 }
 
-function toggleMobileMenu() : void { 
-    var element = document.getElementById("toggle-btn") as HTMLElement;
-    element.classList.toggle("show");
+function toggleMobileMenu(elBtn : HTMLElement) : void { 
+    var mobileMenu = document.getElementById("menu") as HTMLElement;
+    if(elBtn.className === "fas fa-times"){
+        elBtn.className = "fas fa-bars";
+        mobileMenu.classList.toggle("active");
+    }else{
+        elBtn.className = "fas fa-times";
+        mobileMenu.classList.toggle("active");
+    }
 }
