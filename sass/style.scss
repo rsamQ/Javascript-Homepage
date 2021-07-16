@@ -1,165 +1,200 @@
+/* Fonts */
 $montserrat-font-path: "../fonts";
-
-@mixin flexCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 @font-face {
   src: url("#{$montserrat-font-path}/Montserrat-Regular.ttf") format("ttf");
   font-family: "Montserrat";
 }
 
+/* Colors */
+$primary-col: #14191f;
+$secondary-col: #fb592d;
+$light-col: #ebebeb;
+
+/* Breakpoints (Media) */
+$breakpoint: 960px;
+
+/* Mixin */
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
-  background: var(--placeholder-color);
+  background: $primary-col;
   font-size: 16px;
   font-family: "Montserrat";
+  margin: 0 auto;
 }
 
-.NavbarItems {
-  background: #fff;
+/* Header */
+header {
+  background-color: $primary-col;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   font-size: 1.6rem;
-}
+  border-bottom: 1px solid $light-col;
 
-.navbar-logo {
-  color: var(--primary-color);
-  justify-self: start;
-  margin-left: 20px;
-  cursor: pointer;
-  font-size: 3rem;
-}
-
-.fa-rect {
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.navbar-link {
-  font-weight: 600;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-}
-
-a.nav-links {
-  position: relative;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: var(--primary-color);
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+  .navbar-logo {
+    color: $light-col;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 3rem;
   }
 
-  &:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+  .fa-rect {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
   }
-}
 
-.fa-bars {
-  color: var(--primary-color);
-  font-size: 2rem;
-}
+  .navbar-icon {
+    display: none;
+  }
 
-.nav-links-mobile,
-.menu-icon {
-  display: none;
-}
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 20px;
+    list-style: none;
+    text-align: center;
+    width: 60vw;
+    justify-content: end;
+    align-items: center;
+    margin-right: 1rem;
+  }
 
-@media screen and (max-width: 960px) {
-  .NavbarItems {
+  a {
     position: relative;
-  }
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: $light-col;
+    background-color: $primary-col;
+    padding: 0.5rem 0.5rem;
 
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5 ease;
-
-    &.active {
-      background: var(--secondary-color);
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
       left: 0;
+      background-color: $light-col;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media (max-width: $breakpoint) {
+  header {
+    position: relative;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 75px;
+      left: -100%;
       opacity: 1;
-      transition: all 0.5 ease;
-      z-index: 1;
-      display: table;
-      width: 100vw;
-      padding: 0;
+      transition: all 0.5 ease-in;
 
-      a.nav-links {
-        display: block;
-        text-align: center;
-        margin: 0 5px;
+      &.active {
+        left: 0;
+        opacity: 1;
+        display: table;
+        width: 100%;
+        padding: 0;
 
-        &:hover {
-          color: #fff;
-          background-color: var(--primary-color);
+        a {
+          display: block;
+          text-align: center;
+          margin: 0;
+          padding-top: 30px;
+          height: 50px;
+          font-size: 1.6rem;
+          background-color: $secondary-col;
+          color: $primary-col;
+          font-weight: 600;
+
+          &:hover {
+            color: $light-col;
+            background-color: $primary-col;
+          }
+
+          &::before {
+            visibility: hidden;
+          }
+
+          &:hover::before {
+            visibility: hidden;
+          }
         }
       }
     }
-  }
 
-  a.nav-links {
-    &::before,
-    &:hover::before {
-      visibility: hidden;
+    .navbar-logo {
+      position: absolute;
+      left: 0;
+      color: $light-col;
+      transform: translate(25%, 50%);
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+
+    .navbar-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 2rem;
+      margin: 0.25rem 2rem 0.5rem 0.5rem;
+      cursor: pointer;
+      color: $light-col;
+    }
+
+    .fa-times {
+      color: $light-col;
+      font-size: 2.5rem;
     }
   }
+}
 
-  .navbar-logo {
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    transform: translate(25%, 50%);
-    font-size: 3rem;
-    margin-bottom: 5rem;
+/* Typewriter */
+.typewriter {
+  font-size: 40px;
+  color: $primary-col;
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  animation: typing 1.75s steps(15, end), blink-caret 0.75s step-end 5;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 2rem;
-    margin: 0.25rem 2rem 0.5rem 0.5rem;
-    cursor: pointer;
-    color: var(--primary-color);
+  to {
+    width: 100%;
   }
+}
 
-  .fa-times {
-    color: var(--primary-color);
-    font-size: 2.5rem;
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-right: 0.15em solid orange;
   }
 }
