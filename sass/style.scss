@@ -8,7 +8,7 @@ $montserrat-font-path: "../fonts";
 
 /* Colors */
 $primary-col: #14191f;
-$secondary-col: #fb592d;
+$secondary-col: orange;
 $light-col: #ebebeb;
 
 /* Breakpoints (Media) */
@@ -21,11 +21,16 @@ $breakpoint: 960px;
   justify-content: center;
 }
 
+/* */
 body {
   background: $primary-col;
   font-size: 16px;
   font-family: "Montserrat";
   margin: 0 auto;
+}
+
+section {
+  height: 100vh;
 }
 
 /* Header */
@@ -58,7 +63,7 @@ header {
     grid-template-columns: repeat(5, auto);
     grid-gap: 20px;
     list-style: none;
-    text-align: center;
+    justify-content: center;
     width: 60vw;
     justify-content: end;
     align-items: center;
@@ -169,10 +174,32 @@ header {
   }
 }
 
+/* About me */
+.columns {
+  margin: 5rem auto;
+  width: 60%;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5em;
+  justify-content: center;
+  justify-self: center;
+
+  p {
+    font-size: 1.2rem;
+    color: $light-col;
+  }
+}
+
+@media (min-width: 960px) {
+  .columns {
+    grid-auto-flow: column;
+  }
+}
+
 /* Typewriter */
 .typewriter {
   font-size: 40px;
-  color: $primary-col;
+  color: $light-col;
   overflow: hidden;
   border-right: 0.15em solid transparent;
   white-space: nowrap;
