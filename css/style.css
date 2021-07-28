@@ -17,6 +17,17 @@ body {
 
 section {
   height: 100vh;
+  margin: 0px 75px;
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+@media (max-width: 960px) {
+  section {
+    margin: 0px 25px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 /* Header */
@@ -180,7 +191,7 @@ header a:hover::before {
 }
 
 /* About me */
-.columns {
+.about-content {
   margin: 5rem auto;
   width: 60%;
   display: -ms-grid;
@@ -194,13 +205,17 @@ header a:hover::before {
       justify-self: center;
 }
 
-.columns p {
+.about-content p {
   font-size: 1.2rem;
   color: #ebebeb;
 }
 
+.about-content h1 {
+  margin-top: 0;
+}
+
 @media (min-width: 960px) {
-  .columns {
+  .about-content {
     grid-auto-flow: column;
   }
 }
@@ -209,49 +224,38 @@ header a:hover::before {
 .typewriter {
   font-size: 40px;
   color: #ebebeb;
-  overflow: hidden;
-  border-right: 0.15em solid transparent;
   white-space: nowrap;
   letter-spacing: 0.05em;
-  -webkit-animation: typing 1.75s steps(15, end), blink-caret 0.75s step-end 5;
-          animation: typing 1.75s steps(15, end), blink-caret 0.75s step-end 5;
 }
 
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+/* contact */
+#contact {
+  margin: 0 auto;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+#contact h1 {
+  font-weight: 600;
+  font-size: 40px;
+  color: #ebebeb;
+  text-align: center;
 }
 
-@-webkit-keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-right: 0.15em solid orange;
-  }
+#contact div[class^="input-"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-right: 0.15em solid orange;
-  }
+#contact div[class^="input-"] input {
+  height: 50px;
+  width: 200px;
 }
 /*# sourceMappingURL=style.css.map */
