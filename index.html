@@ -60,26 +60,32 @@
 
     <!-- Contact -->
     <section id="contact">
-      <div class="">
-        <h1>Contact Me</h1>
-      </div>
-      <div class="input-name">
-        <input type="text" required />
-        <label>Name</label>
-      </div>
-      <div class="input-mail">
-        <input type="text" required />
-        <label>Email</label>
-      </div>
-      <div class="input-phone">
-        <input type="text" required />
-        <label>Phone Number</label>
-      </div>
-      <div class="input-msg">
-        <textarea required></textarea>
-        <label>Message</label>
-      </div>
-      <div class="send-btn">Send Message</div>
+      <h1>Contact Me</h1>
+      <form action="#" id="contact_form" class="contact-form contact-grid">
+        <div class="form-field first-name">
+          <input type="text" required /><label>Vorname *</label>
+        </div>
+        <div class="form-field last-name">
+          <input type="text" required /><label>Nachname *</label>
+        </div>
+        <div class="form-field email">
+          <input type="email" required /><label>Email *</label>
+        </div>
+        <div class="form-field phone">
+          <input type="tel" required /><label>Telefonnummer *</label>
+        </div>
+        <div class="form-field topic">
+          <input type="text" required /><label>Betreff</label>
+        </div>
+        <div class="comment-box form-field">
+          <textarea rows="10" required></textarea><label>Message</label>
+        </div>
+        <div class="submit-button">
+          <button id="submit-btn" class="form-btn" type="submit">
+            Absenden
+          </button>
+        </div>
+      </form>
     </section>
 
     <!-- Footer -->
